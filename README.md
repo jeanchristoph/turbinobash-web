@@ -214,7 +214,11 @@ tb app sudo/bulldozer test-v1
 tb app sudo/change/php test-v1 8.1
 
 # for CLI
-update-alternatives --set php /usr/bin/php8.1
+update-alternatives --set php /usr/bin/php7.4
+update-alternatives --set phar /usr/bin/phar7.4
+update-alternatives --set phar.phar /usr/bin/phar.phar7.4
+update-alternatives --set phpize /usr/bin/phpize7.4
+update-alternatives --set php-config /usr/bin/php-config7.
 ```
 
 #### Install php version

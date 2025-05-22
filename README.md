@@ -4,7 +4,7 @@
 
 The purpose isn't a DOCKER like : Its a tool between raw server administration and automated appilcation space management
 
-Comptatible with Debian 11 (PHP packages.sury.org is missing form Debian 12) et Ubuntu 22.04 and older
+Comptatible with Debian 12 and older + Ubuntu 24.04 and older
 
 ## turbinobash 
 
@@ -174,7 +174,7 @@ root@test0:/apps/test-v1# tree
 
 
 ```php
-// wordperss wp-config usage 
+// wordpress wp-config usage 
 define( 'DB_NAME', $_SERVER["USER"]);
 define( 'DB_USER', $_SERVER["USER"]);
 define( 'DB_PASSWORD', trim(file_get_contents("/apps/$_SERVER[USER]/etc/mysql/localhost/passwd")));
@@ -238,6 +238,15 @@ tb app sudo/install/composer
 # if you need an other version
 composer self-update 1.9.1
 ```
+
+
+#### Install last MARIADB version
+```bash
+tb app sudo/install/mariadb --last
+```
+
+
+
 
 #### Remove an app
 ```bash
@@ -362,6 +371,8 @@ define( 'DB_NAME', $_SERVER["USER"]);
 define( 'DB_USER', $_SERVER["USER"]);
 define( 'DB_PASSWORD', trim(file_get_contents("/apps/$_SERVER[USER]/etc/mysql/localhost/passwd")));
 define( 'DB_HOST', 'localhost' );
+
+define('FS_METHOD', 'direct');
 ```
 
 Goto your test-v1 app url https://test-v1.sub.domain.tld/ and finish the install
@@ -416,7 +427,7 @@ tb app sudo/way/init nginx $email $hostname $php_default_version
 # in each installed script fix the mode
 
 ### BUT EXISTS ###
-tb app sudo/way/  ↹ ↹
+tb app sudo/way/  ↹ ↹ (TAB TAB)
 
 sudo/way/apache/remove  sudo/way/hybrid/remove  sudo/way/nginx/create   sudo/way/noweb/create   sudo/way/proxy/create
 # show the all way possible and you can mix them when possible
